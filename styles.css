@@ -1,0 +1,348 @@
+@font-face {
+    font-family: 'neontubes';
+    src: url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.eot");
+    src: url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.eot?#iefix") format("embedded-opentype"), 
+         url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.woff2") format("woff2"), 
+         url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.woff") format("woff"), 
+         url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap');
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #030c1c; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+h1 {
+    font-family: "neontubes";
+    font-size: 8vw; 
+    text-align: center;
+    white-space: nowrap;
+    color: #ffd9e2;
+    text-shadow: 0 0 0 transparent, 0 0 10px #ff003c, 0 0 20px rgba(255, 0, 60, 0.5), 0 0 40px #ff003c, 0 0 100px #ff003c, 0 0 200px #ff003c, 0 0 300px #ff003c, 0 0 500px #ff003c, 0 0 1000px #ff003c;
+    -webkit-animation: blink 4s infinite alternate;
+            animation: blink 4s infinite alternate;
+}
+.subtitle {
+    font-size: 6vw; 
+    color: #d4eaff;
+    text-shadow: 0 0 0 transparent, 0 0 10px #2695ff, 0 0 20px rgba(38, 149, 255, 0.5), 0 0 40px #2695ff, 0 0 100px #2695ff, 0 0 200px #2695ff, 0 0 300px #2695ff, 0 0 500px #2695ff;
+    -webkit-animation: buzz 0.01s infinite alternate;
+            animation: buzz 0.01s infinite alternate;
+}
+@-webkit-keyframes buzz {
+    70% {
+        opacity: 0.80;
+    }
+}
+@keyframes buzz {
+    70% {
+        opacity: 0.80;
+    }
+}
+@-webkit-keyframes blink {
+    40% {
+        opacity: 1;
+    }
+    42% {
+        opacity: 0.8;
+    }
+    43% {
+        opacity: 1;
+    }
+    45% {
+        opacity: 0.2;
+    }
+    46% {
+        opacity: 1;
+    }
+}
+@keyframes blink {
+    40% {
+        opacity: 1;
+    }
+    42% {
+        opacity: 0.8;
+    }
+    43% {
+        opacity: 1;
+    }
+    45% {
+        opacity: 0.2;
+    }
+    46% {
+        opacity: 1;
+    }
+}
+@media screen and (min-width: 1000px) {
+    h1 {
+        font-size: 150px;
+    }
+    .subtitle {
+        font-size: 103px;
+    }
+}
+.content {
+    padding: 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin-top: 100px; 
+}
+.video-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.video-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+}
+.video-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+.video-card video {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+.video-card:hover video {
+    transform: translateY(-10px);
+    filter: brightness(1.2);
+}
+.video-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 0, 150, 0.3), rgba(0, 204, 255, 0.3));
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.video-card:hover::before {
+    opacity: 1;
+}
+.video-card .description {
+    background: rgba(0, 0, 0, 0.6); 
+    color: #ffcc00; 
+    padding: 1px;
+    text-align: center;
+    width: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 1px;
+    overflow: hidden; 
+}
+.video-card .description span {
+    display: inline-block;
+    animation: typing 5s steps(30, end), blink-caret 0.75s step-end infinite; 
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 4px solid #ffcc00; 
+    max-width: 200%; 
+}
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #f1ecec; } /* Cambiar el color del parpadeo a amarillo */
+}
+.molecule {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+.molecule canvas {
+    display: block;
+}
+.console-container {
+    font-family: Khula;
+    font-size: 1.5em;
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+}
+.console-underscore {
+    display: inline-block;
+    position: relative;
+    top: -0.14em;
+    left: 10px;
+}
+.hidden {
+    opacity: 0;
+}
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -320px; /* Ajustar para que se esconda por completo */
+    width: 300px;
+    height: 100%;
+    background: #030c1c; /* Fondo azul oscuro */
+    color: #d4eaff; /* Color del texto */
+    overflow-y: auto;
+    transition: right 0.3s ease-in-out, background 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 20px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5); /* Sombra */
+    border-left: 2px solid transparent; /* Borde izquierdo invisible */
+}
+.sidebar.open {
+    right: 0;
+    background: #030c1c; /* Mantener el fondo al abrir */
+    border-left: 2px solid #ff003c; /* Borde izquierdo visible al abrir */
+}
+.sidebar h2 {
+    font-family: "neontubes";
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center; /* Centrar el texto */
+    color: #ff003c; /* Color del texto */
+    text-shadow: 0 0 10px #ff003c, 0 0 20px rgba(255, 0, 60, 0.5); /* Sombra del texto */
+}
+.sidebar p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: justify; /* Justificar el texto */
+}
+.sidebar img {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    transition: transform 0.3s ease-in-out; /* Transición suave */
+}
+.sidebar img:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+}
+.sidebar-toggle {
+    position: relative;
+    top: 20px;
+    right: 0;
+    background: none;
+    color: #ff003c;
+    padding: 50px 100px; /* Ajustar el tamaño del botón */
+    cursor: pointer;
+    z-index: 1001;
+    border: none;
+    font-family: "neontubes";
+    font-size: 4em; /* Ajustar el tamaño de la fuente */
+    text-shadow: 0 0 10px #ff003c, 0 0 20px rgba(255, 0, 60, 0.5), 0 0 40px #ff003c, 0 0 100px #ff003c;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    margin-top: 50px; /* Mover el botón más abajo */
+    align-self: center; /* Centrar el botón horizontalmente */
+    margin-left: auto; /* Mover el botón más a la derecha */
+    margin-right: auto; /* Centrar el botón horizontalmente */
+}
+.sidebar.open ~ .sidebar-toggle {
+    opacity: 1; /* Mantener el botón visible */
+    pointer-events: auto; /* Permitir la interacción */
+    transform: translateX(0); /* Mantener el botón en su lugar */
+}
+.blur-background {
+    filter: blur(5px);
+    transition: filter 0.3s ease-in-out;
+}
+.animated-button {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2.5em;
+    position: relative;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    color: #ff003c;
+    padding: 20px 40px;
+    cursor: pointer;
+    z-index: 1001;
+    border: none;
+    text-shadow: 0 0 10px #ff003c, 0 0 20px rgba(255, 0, 60, 0.5), 0 0 40px #ff003c, 0 0 100px #ff003c;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    margin-top: 50px;
+    align-self: center;
+}
+
+.animated-button .letter {
+    position: relative;
+    display: flex;
+}
+
+.animated-button .source {
+    color: gray;
+    -webkit-text-stroke: 0.01em rgba(black, 0.3);
+    display: flex;
+}
+
+.animated-button .overlay, .animated-button .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    user-select: none;
+}
+
+.animated-button .overlay {
+    background-image: linear-gradient(90deg, white 50%, lighten(#eaece5, 2));
+    
+    -webkit-text-fill-color: transparent;
+    transform: rotateY(-30deg) skew(0, -10deg);
+    transform-origin: left;
+    animation: overlay 3s infinite ease-out var(--delay);
+}
+
+.animated-button .shadow {
+    filter: blur(5px);
+    background-image: linear-gradient(90deg, rgba(black, 0.4) 30%, transparent);
+   
+    -webkit-text-fill-color: transparent;
+    transform: skew(0, 20deg) translateY(0.1em) translateX(0.05em);
+    animation: shadow 3s infinite var(--delay);
+}
+
+@keyframes shadow {
+    0%, 20%, 100% {
+        transform: skew(0, 20deg) translateY(0.1em) translateX(0.05em);
+        opacity: 1;
+    }
+    10% {
+        transform: skew(0, 0) translateY(0) translateX(0);
+        opacity: 0;
+    }
+}
+
+@keyframes overlay {
+    0%, 20%, 100% {
+        transform: rotateY(-30deg) skew(0, -10deg);
+    }
+    10% {
+        transform: rotateY(0deg) skew(0, 0);
+    }
+}

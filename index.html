@@ -1,12 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hardware y Software</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<h1>hola bello</h1>
 <body>
-    <p>estos es una web para quemar mota </p>
+    <header>
+        <h1>HARDWARE</h1>
+        <h1 class="subtitle">Y SOFTWARE</h1>
+    </header>
+    <main class="content" id="mainContent">
+        <section class="video-container">
+            <article class="video-card">
+                <video src="videos/sofware.mp4" controls loading="lazy"></video>
+                <div class="description console-container" id="description1">
+                    <span id="text1">El mundo del HARDWARE</span>
+                    <div class="console-underscore" id="console1">&#95;</div>
+                </div>
+            </article>
+            <article class="video-card">
+                <video src="videos/hardware.mp4" controls loading="lazy"></video>
+                <div class="description console-container" id="description2">
+                    <span id="text2">Te explico que es Software.</span>
+                    <div class="console-underscore" id="console2">&#95;</div>
+                </div>
+            </article>
+            <article class="video-card">
+                <video src="videos/servidores.mp4" controls loading="lazy"></video>
+                <div class="description console-container" id="description3">
+                    <span id="text3">Servidores y muchos más.</span>
+                    <div class="console-underscore" id="console3">&#95;</div>
+                </div>
+            </article>
+        </section>
+        <button class="sidebar-toggle animated-button" onclick="toggleSidebar()">Curiosidades</button>
+    </main>
+    <aside class="sidebar" id="sidebar">
+        <section>
+            <h2>Hardware</h2>
+            <p>El hardware se refiere a las partes físicas de una computadora y dispositivos relacionados. Incluye componentes como la placa base, la CPU, la memoria RAM, los discos duros, y más.</p>
+            <img src="img/hard.jpg" alt="Hardware" loading="lazy">
+        </section>
+        <section>
+            <h2>Software</h2>
+            <p>El software es un conjunto de instrucciones y datos que le dicen a la computadora cómo realizar tareas específicas. Incluye sistemas operativos, aplicaciones y programas.</p>
+            <img src="img/sof.jpg" alt="Software" loading="lazy">
+        </section>
+        <section>
+            <h2>Servidores</h2>
+            <p>Un servidor es una computadora que proporciona datos a otras computadoras. Puede servir contenido web, almacenar archivos, gestionar bases de datos, como esta es un ejemplo de lo que te digo y si llegaste hasta a leer todo, enviame plata a mi nequi 3162524699 apoyemonos de ing a ing.</p>
+            <img src="img/ser.jpg" alt="Servidores" loading="lazy">
+        </section>
+        <section>
+            <h2>Curiosidades</h2>
+            <p>Mientras el 5G sigue expandiéndose, el desarrollo de las redes 6G ya está en marcha. Con velocidades proyectadas 100 veces más rápidas que 5G, 6G permitirá el intercambio de datos en tiempo real para aplicaciones revolucionarias en IoT, realidad aumentada (AR), realidad virtual (VR) y sistemas autónomos. Para 2030, se espera que el 6G conecte más de 500.000 millones de dispositivos en todo el mundo, según Ericsson. Sectores como la sanidad están explorando el uso del 6G para cirugías a distancia, permitiendo a los médicos operar a los pacientes en tiempo real, independientemente de su ubicación. Estas son algunas de las cosas que podemos esperar:</p>
+            <ul>
+                <li>Experiencias digitales inmersivas: El 6G potenciará los entornos de realidad aumentada y realidad virtual con simulaciones realistas para juegos, formación y educación.</li>
+                <li>Ciudades inteligentes: La conectividad mejorada facilitará la gestión del tráfico en tiempo real, la optimización energética y las iniciativas de seguridad pública.</li>
+                <li>Exploración espacial: La tecnología 6G podría facilitar sistemas de comunicación avanzados para misiones espaciales, incluida la exploración de Marte.</li>
+            </ul>
+            <img src="img/6g.jpg" alt="Curiosidades" loading="lazy">
+        </section>
+    </aside>
+    <div class="molecule">
+        <canvas id="moleculeCanvas"></canvas>
+    </div>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
